@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calibr — Autonomous Advertising for Independent Dealerships</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #0a0a0a;
+    --dark: #111111;
+    --card: #181818;
+    --border: #2a2a2a;
+    --white: #f5f5f5;
+    --dim: #888;
+    --orange: #FF5C00;
+    --orange-dim: #cc4900;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--black); color: var(--white); font-family: 'DM Sans', sans-serif; overflow-x: hidden; }
+
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.2rem 3rem;
+    background: rgba(10,10,10,0.92); backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+  .logo { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; letter-spacing: 4px; color: var(--white); text-decoration: none; }
+  .logo span { color: var(--orange); }
+  nav ul { list-style: none; display: flex; gap: 2.5rem; }
+  nav ul a { color: var(--dim); text-decoration: none; font-size: 0.85rem; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; transition: color 0.2s; }
+  nav ul a:hover { color: var(--white); }
+  .nav-cta { background: var(--orange); color: #fff !important; padding: 0.6rem 1.4rem !important; text-transform: uppercase; letter-spacing: 1px; font-weight: 600 !important; transition: background 0.2s !important; }
+  .nav-cta:hover { background: var(--orange-dim) !important; }
+
+  .hero {
+    min-height: 100vh; display: flex; align-items: center;
+    padding: 8rem 3rem 5rem; position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(ellipse 80% 60% at 60% 50%, rgba(255,92,0,0.07) 0%, transparent 70%);
+  }
+  .hero-grid {
+    position: absolute; inset: 0; opacity: 0.03;
+    background-image: linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+  .hero-content { max-width: 900px; position: relative; z-index: 1; }
+  .hero-eyebrow { font-family: 'Space Mono', monospace; font-size: 0.75rem; color: var(--orange); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 1.5rem; }
+  .hero h1 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(4rem, 10vw, 8rem); line-height: 0.95; letter-spacing: 2px; margin-bottom: 2rem; }
+  .hero h1 .line2 { color: var(--orange); display: block; }
+  .hero-sub { font-size: 1.15rem; color: #aaa; max-width: 580px; line-height: 1.7; margin-bottom: 3rem; font-weight: 300; }
+  .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-primary { background: var(--orange); color: #fff; padding: 1rem 2.5rem; font-size: 0.9rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; text-decoration: none; transition: background 0.2s, transform 0.1s; display: inline-block; }
+  .btn-primary:hover { background: var(--orange-dim); transform: translateY(-1px); }
+  .btn-outline { background: transparent; color: var(--white); border: 1px solid var(--border); padding: 1rem 2.5rem; font-size: 0.9rem; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; text-decoration: none; transition: border-color 0.2s; display: inline-block; }
+  .btn-outline:hover { border-color: var(--orange); color: var(--orange); }
+  .hero-stats { display: flex; gap: 3rem; margin-top: 4rem; padding-top: 3rem; border-top: 1px solid var(--border); flex-wrap: wrap; }
+  .stat-num { font-family: 'Bebas Neue', sans-serif; font-size: 3rem; color: var(--orange); line-height: 1; }
+  .stat-label { font-size: 0.8rem; color: var(--dim); text-transform: uppercase; letter-spacing: 1px; margin-top: 0.3rem; }
+
+  .marquee-bar { background: var(--orange); padding: 0.9rem 0; overflow: hidden; white-space: nowrap; }
+  .marquee-inner { display: inline-block; animation: marquee 20s linear infinite; }
+  .marquee-inner span { font-family: 'Bebas Neue', sans-serif; font-size: 1.1rem; letter-spacing: 3px; color: #fff; padding: 0 3rem; }
+  .marquee-inner span::before { content: '▸'; margin-right: 2rem; opacity: 0.6; }
+  @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+  section { padding: 6rem 3rem; }
+  .section-label { font-family: 'Space Mono', monospace; font-size: 0.7rem; color: var(--orange); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 1rem; }
+  .section-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.5rem, 5vw, 4.5rem); line-height: 1; margin-bottom: 1.5rem; }
+  .section-sub { color: #888; font-size: 1rem; line-height: 1.8; max-width: 520px; font-weight: 300; }
+  .container { max-width: 1200px; margin: 0 auto; }
+
+  .problem { background: var(--dark); }
+  .problem-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--border); margin-top: 4rem; }
+  .problem-card { background: var(--dark); padding: 2.5rem; }
+  .problem-card h3 { font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; letter-spacing: 1px; margin-bottom: 0.7rem; }
+  .problem-card p { color: #777; font-size: 0.9rem; line-height: 1.7; }
+
+  .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 4rem; }
+  .service-card { background: var(--card); border: 1px solid var(--border); padding: 2.5rem; position: relative; overflow: hidden; transition: border-color 0.3s; }
+  .service-card:hover { border-color: var(--orange); }
+  .service-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: var(--orange); transform: scaleX(0); transform-origin: left; transition: transform 0.3s; }
+  .service-card:hover::after { transform: scaleX(1); }
+  .service-num { font-family: 'Space Mono', monospace; font-size: 0.7rem; color: var(--orange); letter-spacing: 2px; margin-bottom: 1.5rem; }
+  .service-card h3 { font-family: 'Bebas Neue', sans-serif; font-size: 1.5rem; letter-spacing: 1px; margin-bottom: 1rem; }
+  .service-card p { color: #777; font-size: 0.88rem; line-height: 1.7; }
+
+  .pricing { background: var(--dark); }
+  .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 4rem; }
+  .pricing-card { background: var(--card); border: 1px solid var(--border); padding: 2.5rem; position: relative; }
+  .pricing-card.featured { border-color: var(--orange); }
+  .featured-badge { position: absolute; top: -1px; right: 2rem; background: var(--orange); color: #fff; font-size: 0.65rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: 0.3rem 0.8rem; }
+  .pricing-tier { font-family: 'Space Mono', monospace; font-size: 0.7rem; color: var(--dim); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 1rem; }
+  .pricing-name { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; letter-spacing: 2px; margin-bottom: 0.5rem; }
+  .pricing-price { font-family: 'Bebas Neue', sans-serif; font-size: 3.5rem; color: var(--orange); line-height: 1; }
+  .pricing-price span { font-size: 1rem; color: var(--dim); font-family: 'DM Sans', sans-serif; font-weight: 300; }
+  .pricing-adspend { font-size: 0.8rem; color: var(--dim); margin: 0.5rem 0 2rem; }
+  .pricing-features { list-style: none; margin-bottom: 2rem; }
+  .pricing-features li { padding: 0.6rem 0; border-bottom: 1px solid var(--border); font-size: 0.88rem; color: #aaa; display: flex; align-items: center; gap: 0.7rem; }
+  .pricing-features li::before { content: '▸'; color: var(--orange); font-size: 0.7rem; flex-shrink: 0; }
+
+  .process-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin-top: 4rem; position: relative; }
+  .process-steps::before { content: ''; position: absolute; top: 1.8rem; left: 12.5%; right: 12.5%; height: 1px; background: linear-gradient(90deg, var(--orange), var(--border)); z-index: 0; }
+  .step { text-align: center; padding: 0 1.5rem; position: relative; z-index: 1; }
+  .step-num { width: 3.5rem; height: 3.5rem; background: var(--card); border: 2px solid var(--orange); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-family: 'Bebas Neue', sans-serif; font-size: 1.3rem; color: var(--orange); }
+  .step h3 { font-family: 'Bebas Neue', sans-serif; font-size: 1.2rem; letter-spacing: 1px; margin-bottom: 0.7rem; }
+  .step p { font-size: 0.82rem; color: #777; line-height: 1.6; }
+
+  .agent-section { background: var(--black); }
+  .agent-flow { display: flex; flex-direction: column; gap: 0; margin-top: 4rem; position: relative; }
+  .agent-flow::before { content: ''; position: absolute; left: 1.75rem; top: 0; bottom: 0; width: 2px; background: linear-gradient(180deg, var(--orange), var(--border)); }
+  .agent-step { display: flex; gap: 2rem; align-items: flex-start; padding: 1.5rem 0; position: relative; z-index: 1; }
+  .agent-dot { width: 3.5rem; height: 3.5rem; background: var(--card); border: 2px solid var(--orange); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-family: 'Space Mono', monospace; font-size: 0.7rem; color: var(--orange); }
+  .agent-content h3 { font-family: 'Bebas Neue', sans-serif; font-size: 1.3rem; letter-spacing: 1px; margin-bottom: 0.4rem; }
+  .agent-content p { color: #777; font-size: 0.88rem; line-height: 1.6; }
+
+  .cta-section { background: var(--orange); padding: 6rem 3rem; text-align: center; }
+  .cta-section h2 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(3rem, 7vw, 6rem); color: #fff; line-height: 1; margin-bottom: 1.5rem; }
+  .cta-section p { color: rgba(255,255,255,0.8); font-size: 1.1rem; max-width: 500px; margin: 0 auto 3rem; line-height: 1.6; }
+  .btn-dark { background: var(--black); color: var(--white); padding: 1.2rem 3rem; font-size: 0.9rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; display: inline-block; transition: background 0.2s; }
+  .btn-dark:hover { background: #1a1a1a; }
+
+  footer { background: var(--black); border-top: 1px solid var(--border); padding: 3rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+  .footer-logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.5rem; letter-spacing: 4px; }
+  .footer-logo span { color: var(--orange); }
+  footer p { color: var(--dim); font-size: 0.8rem; }
+
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+  .hero-content > * { animation: fadeUp 0.8s ease forwards; opacity: 0; }
+  .hero-content > *:nth-child(1) { animation-delay: 0.1s; }
+  .hero-content > *:nth-child(2) { animation-delay: 0.2s; }
+  .hero-content > *:nth-child(3) { animation-delay: 0.35s; }
+  .hero-content > *:nth-child(4) { animation-delay: 0.5s; }
+  .hero-content > *:nth-child(5) { animation-delay: 0.65s; }
+
+  @media (max-width: 1024px) {
+    .problem-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    nav ul { display: none; }
+    section { padding: 4rem 1.5rem; }
+    .services-grid, .pricing-grid { grid-template-columns: 1fr; }
+    .process-steps { grid-template-columns: 1fr 1fr; }
+    .problem-grid { grid-template-columns: 1fr; }
+    .hero-stats { flex-wrap: wrap; gap: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="logo">CALIBR<span>.</span></a>
+  <ul>
+    <li><a href="#how-it-works">How It Works</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#contact" class="nav-cta">Book a Call</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">// Autonomous Automotive Advertising</p>
+    <h1>AUTONOMOUS ADVERTISING<br><span class="line2">FOR INDEPENDENTS.</span></h1>
+    <p class="hero-sub">Your inventory, your market, your customers — handled 24/7. We connect your live inventory to Facebook and Instagram so the right vehicle reaches the right buyer the moment it hits your lot.</p>
+    <div class="hero-btns">
+      <a href="https://whop.com/calibr-media" class="btn-primary">Book a Discovery Call</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="stat-num">$18–40</div>
+        <div class="stat-label">Avg. Cost Per Lead</div>
+      </div>
+      <div>
+        <div class="stat-num">24/7</div>
+        <div class="stat-label">Autonomous Optimization</div>
+      </div>
+      <div>
+        <div class="stat-num">100%</div>
+        <div class="stat-label">Automotive Focus</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="marquee-bar">
+  <div class="marquee-inner">
+    <span>FACEBOOK ADS</span><span>INSTAGRAM ADS</span><span>DYNAMIC INVENTORY</span><span>LEAD GENERATION</span><span>RETARGETING</span><span>AUTONOMOUS OPTIMIZATION</span><span>CONQUEST CAMPAIGNS</span><span>FACEBOOK ADS</span><span>INSTAGRAM ADS</span><span>DYNAMIC INVENTORY</span><span>LEAD GENERATION</span><span>RETARGETING</span><span>AUTONOMOUS OPTIMIZATION</span><span>CONQUEST CAMPAIGNS</span>
+  </div>
+</div>
+
+<section class="problem">
+  <div class="container">
+    <div class="section-label">// The Problem</div>
+    <h2 class="section-title">THE TRADITIONAL DEALERSHIP<br>MARKETING MODEL IS BROKEN.</h2>
+    <div class="problem-grid">
+      <div class="problem-card">
+        <h3>Listing sites are a tax, not a strategy.</h3>
+        <p>Paying thousands monthly to AutoTrader and Cars.com puts you in a race against every dealer in your market. You're paying to compete, not to win.</p>
+      </div>
+      <div class="problem-card">
+        <h3>Generic agencies don't understand inventory.</h3>
+        <p>Most agencies treat your dealership like any other business. They don't know how fast inventory moves or how quickly an ad becomes irrelevant when a car sells.</p>
+      </div>
+      <div class="problem-card">
+        <h3>Static campaigns waste budget.</h3>
+        <p>Campaigns set up once and reviewed monthly waste 30-40% of spend on vehicles that already sold, audiences that already saw the ad, or creative that stopped working weeks ago.</p>
+      </div>
+      <div class="problem-card">
+        <h3>Reporting tells you what happened, not what to do.</h3>
+        <p>Most dealers get monthly PDFs full of impressions and clicks. We give you real-time leads, attributed to real vehicles, with actions you can take today.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="how-it-works">
+  <div class="container">
+    <div class="section-label">// What We Do</div>
+    <h2 class="section-title">THREE THINGS.<br>DONE RIGHT.</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-num">01 / LIVE INVENTORY SYNC</div>
+        <h3>Live Inventory Sync</h3>
+        <p>When a vehicle hits your lot, it's in an ad within the hour. When it sells, the ad pauses automatically. No more leads on cars you don't have.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-num">02 / CONTINUOUS OPTIMIZATION</div>
+        <h3>Continuous Optimization</h3>
+        <p>Campaigns evolve daily based on what's actually working. Underperforming ads pause themselves. Winners scale automatically. Your budget always flows to what's selling.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-num">03 / BUILT FOR INDEPENDENTS</div>
+        <h3>Built for Independents</h3>
+        <p>We work exclusively with independent and small-franchise dealers. Big-agency technology, without the big-agency price tag or the layers of account managers.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="agent" class="agent-section">
+  <div class="container">
+    <div class="section-label">// The Calibr Platform</div>
+    <h2 class="section-title">YOUR ADS RUN<br>THEMSELVES.</h2>
+    <p class="section-sub">We deploy a performance-driven system into your ad account. It works autonomously around the clock — no account managers, no manual updates, no delays.</p>
+    <div class="agent-flow">
+      <div class="agent-step">
+        <div class="agent-dot">01</div>
+        <div class="agent-content">
+          <h3>Inventory Feed Connected</h3>
+          <p>We connect to your live inventory feed. Every vehicle in stock becomes an active ad automatically — new arrivals added, sold cars removed, prices updated in real time.</p>
+        </div>
+      </div>
+      <div class="agent-step">
+        <div class="agent-dot">02</div>
+        <div class="agent-content">
+          <h3>Campaigns Built Automatically</h3>
+          <p>Ad copy is written, audiences are selected, budgets are set, and campaigns launch — all without human input. Every ad is precision-targeted to in-market buyers in your area.</p>
+        </div>
+      </div>
+      <div class="agent-step">
+        <div class="agent-dot">03</div>
+        <div class="agent-content">
+          <h3>Continuous Optimization</h3>
+          <p>24/7 the system monitors performance. Underperforming ads get paused. Winning ads get more budget. Audiences get refined. It gets smarter every single day.</p>
+        </div>
+      </div>
+      <div class="agent-step">
+        <div class="agent-dot">04</div>
+        <div class="agent-content">
+          <h3>Leads Delivered Instantly</h3>
+          <p>Every lead captured goes directly to your CRM in real time. Name, phone, email, vehicle interest — everything your sales team needs to close the deal.</p>
+        </div>
+      </div>
+      <div class="agent-step">
+        <div class="agent-dot">05</div>
+        <div class="agent-content">
+          <h3>You See Everything</h3>
+          <p>A live dashboard shows your leads, spend, cost per lead, and ROI — updated daily. Full transparency, no black boxes, no guessing.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background: var(--dark);">
+  <div class="container">
+    <div class="section-label">// How It Works</div>
+    <h2 class="section-title">LIVE IN<br>7 DAYS.</h2>
+    <div class="process-steps">
+      <div class="step">
+        <div class="step-num">01</div>
+        <h3>Discovery Call</h3>
+        <p>Free 15-min walkthrough of your current ads and inventory. We tell you honestly whether we're a fit.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <h3>Platform Setup</h3>
+        <p>We connect your inventory feed, install tracking, and configure the system for your dealership.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <h3>Go Live</h3>
+        <p>Campaigns launch. Leads start flowing. We monitor everything from day one.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">04</div>
+        <h3>Scale</h3>
+        <p>Monthly reviews, ongoing improvements, expanding what works. We grow with your dealership.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="pricing" class="pricing">
+  <div class="container">
+    <div class="section-label">// Pricing</div>
+    <h2 class="section-title">STRAIGHTFORWARD<br>PACKAGES.</h2>
+    <p class="section-sub">Flat monthly retainers. Ad spend is paid directly to Meta — separate from our management fee.</p>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <div class="pricing-tier">Tier 01</div>
+        <div class="pricing-name">STARTER</div>
+        <div class="pricing-price">$1,500<span>/mo</span></div>
+        <div class="pricing-adspend">+ $2,000–$5,000 ad spend (paid to Meta)</div>
+        <ul class="pricing-features">
+          <li>Autonomous campaign deployment</li>
+          <li>Facebook + Instagram ads</li>
+          <li>Dynamic inventory integration</li>
+          <li>Monthly performance report</li>
+          <li>Monthly strategy call</li>
+        </ul>
+        <a href="https://whop.com/calibr-media" class="btn-outline" style="width:100%;text-align:center;display:block;">Get Started</a>
+      </div>
+      <div class="pricing-card featured">
+        <div class="featured-badge">Most Popular</div>
+        <div class="pricing-tier">Tier 02</div>
+        <div class="pricing-name">GROWTH</div>
+        <div class="pricing-price">$2,500<span>/mo</span></div>
+        <div class="pricing-adspend">+ $5,000–$15,000 ad spend (paid to Meta)</div>
+        <ul class="pricing-features">
+          <li>Everything in Starter</li>
+          <li>Full-funnel campaigns</li>
+          <li>Retargeting included</li>
+          <li>Bi-weekly reports</li>
+          <li>Bi-weekly strategy calls</li>
+          <li>Custom creative design</li>
+        </ul>
+        <a href="https://whop.com/calibr-media" class="btn-primary" style="width:100%;text-align:center;display:block;">Get Started</a>
+      </div>
+      <div class="pricing-card">
+        <div class="pricing-tier">Tier 03</div>
+        <div class="pricing-name">DOMINATOR</div>
+        <div class="pricing-price">$4,500<span>/mo</span></div>
+        <div class="pricing-adspend">+ $15,000–$40,000 ad spend (paid to Meta)</div>
+        <ul class="pricing-features">
+          <li>Everything in Growth</li>
+          <li>Conquest campaigns</li>
+          <li>Service dept. ads</li>
+          <li>Weekly performance calls</li>
+          <li>Dedicated account manager</li>
+          <li>Priority support</li>
+        </ul>
+        <a href="https://whop.com/calibr-media" class="btn-outline" style="width:100%;text-align:center;display:block;">Get Started</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="cta-section">
+  <h2>READY TO SEE<br>HOW IT WORKS?</h2>
+  <p>Book a 15-minute discovery call. We'll walk through your current advertising, show you our platform live, and tell you honestly whether we're a fit.</p>
+  <a href="https://whop.com/calibr-media" class="btn-dark">Book Discovery Call</a>
+</section>
+
+<footer>
+  <div class="footer-logo">CALIBR<span>.</span></div>
+  <p>© 2025 Calibr Media LLC. Autonomous advertising for independent dealerships.</p>
+  <p>calibrmedia.com</p>
+</footer>
+
+</body>
+</html>
