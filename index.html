@@ -103,6 +103,23 @@
   .pricing-features li { padding: 0.6rem 0; border-bottom: 1px solid var(--border); font-size: 0.88rem; color: #aaa; display: flex; align-items: center; gap: 0.7rem; }
   .pricing-features li::before { content: '▸'; color: var(--orange); font-size: 0.7rem; flex-shrink: 0; }
 
+  .founding-pricing { background: var(--dark); }
+  .founding-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 3rem; }
+  .founding-card { background: var(--card); border: 1px solid var(--border); padding: 2.5rem; position: relative; transition: border-color 0.3s; }
+  .founding-card.featured { border-color: var(--orange); }
+  .founding-price-old { font-family: 'Space Mono', monospace; font-size: 0.85rem; color: #555; text-decoration: line-through; margin-bottom: 0.3rem; }
+  .founding-price-new { font-family: 'Bebas Neue', sans-serif; font-size: 4rem; color: var(--white); line-height: 1; letter-spacing: 1px; }
+  .founding-price-new span { font-size: 1rem; font-family: 'DM Sans', sans-serif; color: var(--dim); font-weight: 300; }
+  .founding-setup { font-size: 0.82rem; margin: 0.6rem 0 1.8rem; }
+  .founding-setup s { color: #555; }
+  .founding-setup .no-fee { color: var(--orange); font-weight: 600; }
+  .founding-features { list-style: none; margin-bottom: 2rem; }
+  .founding-features li { padding: 0.6rem 0; border-bottom: 1px solid var(--border); font-size: 0.88rem; color: #aaa; display: flex; align-items: center; gap: 0.7rem; }
+  .founding-features li::before { content: '▸'; color: var(--orange); font-size: 0.7rem; flex-shrink: 0; }
+  .founding-name { font-family: 'Bebas Neue', sans-serif; font-size: 1.6rem; letter-spacing: 2px; margin-bottom: 1.2rem; }
+  .spots-note { text-align: center; font-size: 0.82rem; color: var(--dim); margin-top: 2rem; letter-spacing: 0.5px; }
+  .spots-note strong { color: var(--orange); }
+
   .process-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin-top: 4rem; position: relative; }
   .process-steps::before { content: ''; position: absolute; top: 1.8rem; left: 12.5%; right: 12.5%; height: 1px; background: linear-gradient(90deg, var(--orange), var(--border)); z-index: 0; }
   .step { text-align: center; padding: 0 1.5rem; position: relative; z-index: 1; }
@@ -144,7 +161,7 @@
     nav { padding: 1rem 1.5rem; }
     nav ul { display: none; }
     section { padding: 4rem 1.5rem; }
-    .services-grid, .pricing-grid { grid-template-columns: 1fr; }
+    .services-grid, .pricing-grid, .founding-grid { grid-template-columns: 1fr; }
     .process-steps { grid-template-columns: 1fr 1fr; }
     .problem-grid { grid-template-columns: 1fr; }
     .hero-stats { flex-wrap: wrap; gap: 1.5rem; }
@@ -240,6 +257,58 @@
         <p>We work exclusively with independent and small-franchise dealers. Big-agency technology, without the big-agency price tag or the layers of account managers.</p>
       </div>
     </div>
+  </div>
+</section>
+
+<section id="founding-pricing" class="founding-pricing">
+  <div class="container">
+    <div class="section-label">// Limited Availability</div>
+    <h2 class="section-title">FOUNDING CLIENT<br>PRICING.</h2>
+    <p class="section-sub">We're partnering with our first 5 independent dealerships in Michigan. Founding clients receive locked-in pricing for 12 months and zero setup fees.</p>
+    <div class="founding-grid">
+
+      <div class="founding-card">
+        <div class="pricing-tier">Starter</div>
+        <div class="founding-name">STARTER</div>
+        <div class="founding-price-old">$1,497/month</div>
+        <div class="founding-price-new">$997<span>/mo</span></div>
+        <div class="founding-setup">
+          <s>$500 setup fee</s> &nbsp;
+          <span class="no-fee">No setup fee</span>
+        </div>
+        <ul class="founding-features">
+          <li>Live inventory sync (up to 50 vehicles)</li>
+          <li>Facebook &amp; Instagram ad management</li>
+          <li>3 A/B tested ad variants per campaign</li>
+          <li>Monthly performance reports</li>
+          <li>Email support</li>
+        </ul>
+        <a href="mailto:wes@calibrmedia.com?subject=Discovery%20Call%20Request" class="btn-outline" style="width:100%;text-align:center;display:block;">Book Discovery Call</a>
+      </div>
+
+      <div class="founding-card featured">
+        <div class="featured-badge">Most Popular</div>
+        <div class="pricing-tier">Growth</div>
+        <div class="founding-name">GROWTH</div>
+        <div class="founding-price-old">$2,997/month</div>
+        <div class="founding-price-new">$1,997<span>/mo</span></div>
+        <div class="founding-setup">
+          <s>$500 setup fee</s> &nbsp;
+          <span class="no-fee">No setup fee</span>
+        </div>
+        <ul class="founding-features">
+          <li>Live inventory sync (unlimited vehicles)</li>
+          <li>Facebook &amp; Instagram ad management</li>
+          <li>Continuous A/B optimization</li>
+          <li>Weekly performance reviews</li>
+          <li>Priority email &amp; phone support</li>
+          <li>Real-time lead notifications</li>
+        </ul>
+        <a href="mailto:wes@calibrmedia.com?subject=Discovery%20Call%20Request" class="btn-primary" style="width:100%;text-align:center;display:block;">Book Discovery Call</a>
+      </div>
+
+    </div>
+    <p class="spots-note">Only <strong>5 founding client spots</strong> available. After these are filled, standard pricing applies.</p>
   </div>
 </section>
 
