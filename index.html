@@ -145,6 +145,9 @@
   .footer-logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.5rem; letter-spacing: 4px; }
   .footer-logo span { color: var(--orange); }
   footer p { color: var(--dim); font-size: 0.8rem; }
+  .footer-links { display: flex; gap: 1.5rem; align-items: center; }
+  .footer-links a { color: var(--dim); font-size: 0.8rem; text-decoration: none; transition: color 0.2s; }
+  .footer-links a:hover { color: var(--white); }
 
   @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
   .hero-content > * { animation: fadeUp 0.8s ease forwards; opacity: 0; }
@@ -396,7 +399,10 @@
 <footer>
   <div class="footer-logo">CALIBR<span>.</span></div>
   <p>© 2025 Calibr Media LLC. Autonomous advertising for independent dealerships.</p>
-  <p>calibrmedia.com</p>
+  <div class="footer-links">
+    <a href="/privacy">Privacy Policy</a>
+    <p>calibrmedia.com</p>
+  </div>
 </footer>
 
 </body>

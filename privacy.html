@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — Calibr Media</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #0a0a0a;
+    --dark: #111111;
+    --card: #181818;
+    --border: #2a2a2a;
+    --white: #f5f5f5;
+    --dim: #888;
+    --orange: #FF5C00;
+    --orange-dim: #cc4900;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--black); color: var(--white); font-family: 'DM Sans', sans-serif; overflow-x: hidden; }
+
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.2rem 3rem;
+    background: rgba(10,10,10,0.92); backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+  .logo { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; letter-spacing: 4px; color: var(--white); text-decoration: none; }
+  .logo span { color: var(--orange); }
+  nav ul { list-style: none; display: flex; gap: 2.5rem; }
+  nav ul a { color: var(--dim); text-decoration: none; font-size: 0.85rem; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; transition: color 0.2s; }
+  nav ul a:hover { color: var(--white); }
+  .nav-cta { background: var(--orange); color: #fff !important; padding: 0.6rem 1.4rem !important; text-transform: uppercase; letter-spacing: 1px; font-weight: 600 !important; transition: background 0.2s !important; }
+  .nav-cta:hover { background: var(--orange-dim) !important; }
+
+  .policy-hero {
+    padding: 9rem 3rem 4rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .policy-hero .section-label { font-family: 'Space Mono', monospace; font-size: 0.7rem; color: var(--orange); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 1rem; }
+  .policy-hero h1 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(3rem, 7vw, 5.5rem); line-height: 0.95; letter-spacing: 2px; margin-bottom: 1.2rem; }
+  .policy-hero .last-updated { font-family: 'Space Mono', monospace; font-size: 0.75rem; color: var(--dim); letter-spacing: 1px; }
+
+  .policy-body {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 4rem 3rem 6rem;
+  }
+
+  .policy-section { margin-bottom: 3rem; }
+  .policy-section h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.6rem;
+    letter-spacing: 2px;
+    color: var(--white);
+    margin-bottom: 1rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .policy-section p {
+    color: #aaa;
+    font-size: 0.95rem;
+    line-height: 1.8;
+    font-weight: 300;
+    margin-bottom: 0.8rem;
+  }
+  .policy-section ul {
+    list-style: none;
+    margin: 0.5rem 0 0.8rem;
+  }
+  .policy-section ul li {
+    color: #aaa;
+    font-size: 0.95rem;
+    line-height: 1.8;
+    font-weight: 300;
+    padding: 0.3rem 0;
+    padding-left: 1.4rem;
+    position: relative;
+  }
+  .policy-section ul li::before {
+    content: '▸';
+    color: var(--orange);
+    font-size: 0.65rem;
+    position: absolute;
+    left: 0;
+    top: 0.55rem;
+  }
+
+  .policy-contact {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--orange);
+    padding: 1.5rem 2rem;
+    margin-top: 1rem;
+  }
+  .policy-contact p {
+    margin-bottom: 0.3rem;
+  }
+  .policy-contact a {
+    color: var(--orange);
+    text-decoration: none;
+  }
+  .policy-contact a:hover {
+    text-decoration: underline;
+  }
+
+  footer { background: var(--black); border-top: 1px solid var(--border); padding: 3rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+  .footer-logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.5rem; letter-spacing: 4px; }
+  .footer-logo span { color: var(--orange); }
+  footer p { color: var(--dim); font-size: 0.8rem; }
+  .footer-links { display: flex; gap: 1.5rem; align-items: center; }
+  .footer-links a { color: var(--dim); font-size: 0.8rem; text-decoration: none; transition: color 0.2s; }
+  .footer-links a:hover { color: var(--white); }
+
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    nav ul { display: none; }
+    .policy-hero { padding: 7rem 1.5rem 3rem; }
+    .policy-body { padding: 3rem 1.5rem 5rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="logo">CALIBR<span>.</span></a>
+  <ul>
+    <li><a href="/#how-it-works">How It Works</a></li>
+    <li><a href="/#pricing">Pricing</a></li>
+    <li><a href="mailto:wes@calibrmedia.com?subject=Discovery%20Call%20Request" class="nav-cta">Book a Call</a></li>
+  </ul>
+</nav>
+
+<div class="policy-hero">
+  <div style="max-width: 780px; margin: 0 auto;">
+    <div class="section-label">// Legal</div>
+    <h1>PRIVACY<br>POLICY.</h1>
+    <p class="last-updated">Last Updated: June 29, 2026</p>
+  </div>
+</div>
+
+<div class="policy-body">
+
+  <div class="policy-section">
+    <p>Calibr Media LLC ("we," "our," or "us") respects your privacy and is committed to protecting your personal information. This Privacy Policy explains how we collect, use, and protect information when you use our services.</p>
+  </div>
+
+  <div class="policy-section">
+    <h2>Information We Collect</h2>
+    <p>When you use our services or work with us as a client, we may collect:</p>
+    <ul>
+      <li>Business contact information (name, email, phone, dealership name)</li>
+      <li>Advertising account access (Facebook, Instagram, Google) when granted by you</li>
+      <li>Vehicle inventory data from your dealership website or feed</li>
+      <li>Campaign performance data and analytics</li>
+      <li>Communications between you and Calibr Media</li>
+    </ul>
+  </div>
+
+  <div class="policy-section">
+    <h2>How We Use Information</h2>
+    <p>We use collected information to:</p>
+    <ul>
+      <li>Provide advertising management services for your dealership</li>
+      <li>Create, manage, and optimize Facebook and Instagram ad campaigns</li>
+      <li>Sync your live inventory with advertising platforms</li>
+      <li>Generate performance reports and analytics</li>
+      <li>Communicate with you about your account and our services</li>
+      <li>Process payments and manage billing</li>
+    </ul>
+  </div>
+
+  <div class="policy-section">
+    <h2>Information Sharing</h2>
+    <p>We do not sell your information. We may share information with:</p>
+    <ul>
+      <li>Meta Platforms (Facebook/Instagram) for advertising delivery</li>
+      <li>Stripe for payment processing</li>
+      <li>SendGrid for email communications</li>
+      <li>Service providers who help us operate our business</li>
+    </ul>
+  </div>
+
+  <div class="policy-section">
+    <h2>Data Security</h2>
+    <p>We implement industry-standard security measures to protect your information, including encryption, secure data storage, and access controls.</p>
+  </div>
+
+  <div class="policy-section">
+    <h2>Your Rights</h2>
+    <p>You have the right to:</p>
+    <ul>
+      <li>Access information we hold about you</li>
+      <li>Request corrections to inaccurate information</li>
+      <li>Request deletion of your data</li>
+      <li>Revoke access to your advertising accounts at any time</li>
+    </ul>
+  </div>
+
+  <div class="policy-section">
+    <h2>Contact Us</h2>
+    <div class="policy-contact">
+      <p>Calibr Media LLC</p>
+      <p>Ada, Michigan</p>
+      <p>Email: <a href="mailto:wes@calibrmedia.com">wes@calibrmedia.com</a></p>
+    </div>
+  </div>
+
+  <div class="policy-section">
+    <h2>Changes to This Policy</h2>
+    <p>We may update this Privacy Policy from time to time. Changes will be posted on this page with an updated revision date.</p>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-logo">CALIBR<span>.</span></div>
+  <p>© 2025 Calibr Media LLC. Autonomous advertising for independent dealerships.</p>
+  <div class="footer-links">
+    <a href="/privacy">Privacy Policy</a>
+    <p>calibrmedia.com</p>
+  </div>
+</footer>
+
+</body>
+</html>
