@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Privacy Policy — Calibr Media</title>
+<meta name="description" content="How Calibr Media LLC collects, uses, retains, and protects information for clients and consumers, including Meta Platform Data handling.">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -59,6 +60,14 @@
     padding-bottom: 0.6rem;
     border-bottom: 1px solid var(--border);
   }
+  .policy-section h3 {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--white);
+    margin: 2rem 0 0.8rem;
+  }
   .policy-section p {
     color: #aaa;
     font-size: 0.95rem;
@@ -66,6 +75,9 @@
     font-weight: 300;
     margin-bottom: 0.8rem;
   }
+  .policy-section strong { color: var(--white); font-weight: 600; }
+  .policy-section a { color: var(--orange); text-decoration: none; }
+  .policy-section a:hover { text-decoration: underline; }
   .policy-section ul {
     list-style: none;
     margin: 0.5rem 0 0.8rem;
@@ -87,6 +99,33 @@
     left: 0;
     top: 0.55rem;
   }
+
+  .policy-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0 1.5rem;
+  }
+  .policy-table th {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--orange);
+    padding: 0.7rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--orange);
+    font-weight: 400;
+  }
+  .policy-table td {
+    color: #aaa;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--border);
+    line-height: 1.6;
+    font-size: 0.9rem;
+    font-weight: 300;
+    vertical-align: top;
+  }
+  .policy-table tr:last-child td { border-bottom: none; }
 
   .policy-contact {
     background: var(--card);
@@ -137,90 +176,208 @@
   <div style="max-width: 780px; margin: 0 auto;">
     <div class="section-label">// Legal</div>
     <h1>PRIVACY<br>POLICY.</h1>
-    <p class="last-updated">Last Updated: June 29, 2026</p>
+    <p class="last-updated">Last Updated: August 4, 2026</p>
   </div>
 </div>
 
 <div class="policy-body">
 
   <div class="policy-section">
-    <p>Calibr Media LLC ("we," "our," or "us") respects your privacy and is committed to protecting your personal information. This Privacy Policy explains how we collect, use, and protect information when you use our services.</p>
+    <p>Calibr Media LLC ("Calibr Media," "we," "our," or "us") respects your privacy and is committed to protecting personal information. This Privacy Policy explains what information we collect, how we use it, how long we keep it, and how you can request its deletion.</p>
+    <p>This policy covers two distinct groups:</p>
+    <ul>
+      <li><strong>Clients</strong> — dealerships and businesses that hire us to manage their advertising.</li>
+      <li><strong>Consumers</strong> — individuals who submit a lead form or interact with an advertisement we manage on behalf of a client.</li>
+    </ul>
   </div>
 
   <div class="policy-section">
-    <h2>Information We Collect</h2>
-    <p>When you use our services or work with us as a client, we may collect:</p>
+    <h2>1. Information We Collect From Clients</h2>
+    <p>When you engage Calibr Media as a client, we collect:</p>
     <ul>
-      <li>Business contact information (name, email, phone, dealership name)</li>
-      <li>Advertising account access (Facebook, Instagram, Google) when granted by you</li>
-      <li>Vehicle inventory data from your dealership website or feed</li>
+      <li>Business contact information (name, email, phone, business name, address)</li>
+      <li>Advertising account and Facebook Page access, when granted by you</li>
+      <li>Vehicle or service inventory data from your website or inventory feed</li>
       <li>Campaign performance data and analytics</li>
+      <li>Billing information, processed by Stripe (we do not store full payment card numbers)</li>
       <li>Communications between you and Calibr Media</li>
     </ul>
   </div>
 
   <div class="policy-section">
-    <h2>How We Use Information</h2>
-    <p>We use collected information to:</p>
+    <h2>2. Information We Collect From Consumers (Lead Data)</h2>
+    <p>When you submit a lead form on a Facebook or Instagram advertisement managed by Calibr Media on behalf of one of our clients, we receive the information you voluntarily provided in that form. Depending on how the form is configured, this may include:</p>
     <ul>
-      <li>Provide advertising management services for your dealership</li>
-      <li>Create, manage, and optimize Facebook and Instagram ad campaigns</li>
-      <li>Sync your live inventory with advertising platforms</li>
-      <li>Generate performance reports and analytics</li>
-      <li>Communicate with you about your account and our services</li>
-      <li>Process payments and manage billing</li>
+      <li>Full name</li>
+      <li>Email address</li>
+      <li>Phone number</li>
+      <li>Postal code or city</li>
+      <li>Vehicle or service of interest</li>
+      <li>Answers to custom questions configured by the advertising client (for example, preferred contact time, trade-in status, or financing interest)</li>
     </ul>
-  </div>
+    <p>We receive this information from Meta Platforms, Inc. through the Facebook Lead Ads API, using the <code style="font-family:'Space Mono',monospace;font-size:0.85em;color:var(--orange);">leads_retrieval</code> and <code style="font-family:'Space Mono',monospace;font-size:0.85em;color:var(--orange);">pages_manage_leads</code> permissions granted to us by the client who owns the Facebook Page.</p>
+    <p><strong>We collect only the fields shown on the lead form at the time you submit it.</strong> We do not collect information about you from your Facebook or Instagram profile beyond what you enter into the form and what Meta pre-fills for you, which you can review and edit before submitting.</p>
 
-  <div class="policy-section">
-    <h2>Information Sharing</h2>
-    <p>We do not sell your information. We may share information with:</p>
+    <h3>How Lead Data Is Used</h3>
+    <p>Lead data is used for exactly one purpose: <strong>delivering your inquiry to the business you contacted so they can respond to you.</strong></p>
+    <p>Specifically, we:</p>
     <ul>
-      <li>Meta Platforms (Facebook/Instagram) for advertising delivery</li>
-      <li>Stripe for payment processing</li>
-      <li>SendGrid for email communications</li>
-      <li>Service providers who help us operate our business</li>
+      <li>Retrieve the lead from Meta in real time via a secure webhook</li>
+      <li>Store it in our access-controlled database</li>
+      <li>Display it in the client's private dashboard so their sales team can follow up</li>
+      <li>Where the client has configured it, forward it to that client's CRM or notify them by email</li>
     </ul>
-  </div>
 
-  <div class="policy-section">
-    <h2>Data Security</h2>
-    <p>We implement industry-standard security measures to protect your information, including encryption, secure data storage, and access controls.</p>
-  </div>
-
-  <div class="policy-section">
-    <h2>Your Rights</h2>
-    <p>You have the right to:</p>
+    <h3>What We Do Not Do With Lead Data</h3>
     <ul>
-      <li>Access information we hold about you</li>
-      <li>Request corrections to inaccurate information</li>
-      <li>Request deletion of your data</li>
-      <li>Revoke access to your advertising accounts at any time</li>
+      <li>We do not sell lead data to anyone, under any circumstances.</li>
+      <li>We do not share lead data with any party other than the specific client whose advertisement you responded to.</li>
+      <li>We do not use lead data to build advertising audiences, train models, or market our own services.</li>
+      <li>We do not combine lead data across clients or use it for any purpose beyond the single inquiry you submitted.</li>
     </ul>
+
+    <h3>Who Controls Your Lead Data</h3>
+    <p>The advertising client — the dealership or business whose advertisement you responded to — is the controller of your lead data. Calibr Media acts as a service provider processing that data on their behalf and under their instructions. Requests to access or delete your data may be directed to either party; see Section 7.</p>
   </div>
 
   <div class="policy-section">
-    <h2>Contact Us</h2>
+    <h2>3. Meta Platform Data</h2>
+    <p>Data we receive through Meta's APIs ("Platform Data") is used solely to provide advertising management services to the client who granted us access. We handle Platform Data in accordance with the Meta Platform Terms and Developer Policies. We do not transfer Platform Data to any data broker, ad network, or party unrelated to the service we provide to that client.</p>
+  </div>
+
+  <div class="policy-section">
+    <h2>4. Information Sharing</h2>
+    <p>We do not sell any information. We share information only as follows:</p>
+    <table class="policy-table">
+      <thead>
+        <tr>
+          <th>Recipient</th>
+          <th>What is shared</th>
+          <th>Purpose</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Meta Platforms, Inc.</td>
+          <td>Campaign, ad, and targeting configuration</td>
+          <td>Delivering advertisements</td>
+        </tr>
+        <tr>
+          <td>The advertising client</td>
+          <td>Lead data from their own campaigns only</td>
+          <td>Responding to consumer inquiries</td>
+        </tr>
+        <tr>
+          <td>Stripe, Inc.</td>
+          <td>Client billing information</td>
+          <td>Payment processing</td>
+        </tr>
+        <tr>
+          <td>Twilio SendGrid</td>
+          <td>Email addresses for notifications</td>
+          <td>Transactional email delivery</td>
+        </tr>
+        <tr>
+          <td>Render (hosting)</td>
+          <td>Data at rest in our application database</td>
+          <td>Infrastructure</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Service providers are contractually restricted to using data only to perform services for us.</p>
+    <p>We may also disclose information where required by law, subpoena, or valid legal process, or to protect our rights or the safety of others.</p>
+  </div>
+
+  <div class="policy-section">
+    <h2>5. Data Retention</h2>
+    <table class="policy-table">
+      <thead>
+        <tr>
+          <th>Data type</th>
+          <th>Retention period</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Consumer lead data</td>
+          <td>24 months from submission, then permanently deleted</td>
+        </tr>
+        <tr>
+          <td>Client account and contact data</td>
+          <td>Duration of the engagement plus 24 months</td>
+        </tr>
+        <tr>
+          <td>Campaign performance and analytics</td>
+          <td>Duration of the engagement plus 24 months</td>
+        </tr>
+        <tr>
+          <td>Billing records</td>
+          <td>7 years, as required for tax and accounting purposes</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>When a client relationship ends, we delete or return all lead data associated with that client within 30 days of written request.</p>
+  </div>
+
+  <div class="policy-section">
+    <h2>6. Data Security</h2>
+    <p>We protect information using:</p>
+    <ul>
+      <li>Encryption in transit (TLS) for all data transmitted to and from our systems</li>
+      <li>Encrypted storage at rest in a managed PostgreSQL database</li>
+      <li>Access controls limiting lead data visibility to the client who owns it and authorized Calibr Media personnel</li>
+      <li>Credential rotation and secrets stored in environment configuration, never in source code</li>
+    </ul>
+    <p>No system is perfectly secure, but we take reasonable and industry-standard measures to protect the data entrusted to us.</p>
+  </div>
+
+  <div class="policy-section">
+    <h2>7. Your Rights and How to Exercise Them</h2>
+    <p>Regardless of where you live, you may request that we:</p>
+    <ul>
+      <li>Confirm what information we hold about you</li>
+      <li>Correct inaccurate information</li>
+      <li><strong>Delete your information</strong></li>
+      <li>Stop processing your information</li>
+      <li>Revoke advertising account or Page access granted to us (clients)</li>
+    </ul>
+    <div class="policy-contact">
+      <p><strong>To make a request, email <a href="mailto:wesconk@calibrmedia.com">wesconk@calibrmedia.com</a> with the subject line "Data Request."</strong></p>
+      <p>Include the email address or phone number you submitted so we can locate your record. We respond within <strong>30 days</strong>.</p>
+    </div>
+    <p style="margin-top: 1rem;">Full deletion instructions are available at <a href="/data-deletion"><strong>calibrmedia.com/data-deletion</strong></a>.</p>
+    <p>If you are a California resident, you have additional rights under the CCPA/CPRA, including the right to know what personal information is collected and the right to opt out of sale — noting that we do not sell personal information.</p>
+  </div>
+
+  <div class="policy-section">
+    <h2>8. Children's Privacy</h2>
+    <p>Our services are directed to businesses and adult consumers. We do not knowingly collect information from anyone under 18. If we learn we have collected such information, we will delete it.</p>
+  </div>
+
+  <div class="policy-section">
+    <h2>9. Changes to This Policy</h2>
+    <p>We may update this Privacy Policy. Material changes will be posted on this page with an updated revision date. Continued use of our services after a change constitutes acceptance.</p>
+  </div>
+
+  <div class="policy-section">
+    <h2>10. Contact</h2>
     <div class="policy-contact">
       <p>Calibr Media LLC</p>
-      <p>Ada, Michigan</p>
-      <p>Email: <a href="mailto:wes@calibrmedia.com">wes@calibrmedia.com</a></p>
+      <p>1301 Pagosa Drive</p>
+      <p>Ada, Michigan 49301</p>
+      <p>Email: <a href="mailto:wesconk@calibrmedia.com">wesconk@calibrmedia.com</a></p>
     </div>
-  </div>
-
-  <div class="policy-section">
-    <h2>Changes to This Policy</h2>
-    <p>We may update this Privacy Policy from time to time. Changes will be posted on this page with an updated revision date.</p>
   </div>
 
 </div>
 
 <footer>
   <div class="footer-logo">CALIBR<span>.</span></div>
-  <p>© 2025 Calibr Media LLC. Autonomous advertising for independent dealerships.</p>
+  <p>© 2026 Calibr Media LLC. Autonomous advertising for independent dealerships.</p>
   <div class="footer-links">
     <a href="/privacy">Privacy Policy</a>
-    <p>calibrmedia.com</p>
+    <a href="/terms">Terms of Service</a>
+    <a href="/data-deletion">Data Deletion</a>
   </div>
 </footer>
 

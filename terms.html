@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms of Service — Calibr Media</title>
+<meta name="description" content="Terms governing use of Calibr Media's advertising management platform, client portal, and services.">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #0a0a0a;
+    --dark: #111111;
+    --card: #181818;
+    --border: #2a2a2a;
+    --white: #f5f5f5;
+    --dim: #888;
+    --orange: #FF5C00;
+    --orange-dim: #cc4900;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--black); color: var(--white); font-family: 'DM Sans', sans-serif; overflow-x: hidden; }
+
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.2rem 3rem;
+    background: rgba(10,10,10,0.92); backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+  .logo { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; letter-spacing: 4px; color: var(--white); text-decoration: none; }
+  .logo span { color: var(--orange); }
+  nav ul { list-style: none; display: flex; gap: 2.5rem; }
+  nav ul a { color: var(--dim); text-decoration: none; font-size: 0.85rem; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; transition: color 0.2s; }
+  nav ul a:hover { color: var(--white); }
+  .nav-cta { background: var(--orange); color: #fff !important; padding: 0.6rem 1.4rem !important; text-transform: uppercase; letter-spacing: 1px; font-weight: 600 !important; transition: background 0.2s !important; }
+  .nav-cta:hover { background: var(--orange-dim) !important; }
+
+  .policy-hero {
+    padding: 9rem 3rem 4rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .policy-hero .section-label { font-family: 'Space Mono', monospace; font-size: 0.7rem; color: var(--orange); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 1rem; }
+  .policy-hero h1 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(3rem, 7vw, 5.5rem); line-height: 0.95; letter-spacing: 2px; margin-bottom: 1.2rem; }
+  .policy-hero .last-updated { font-family: 'Space Mono', monospace; font-size: 0.75rem; color: var(--dim); letter-spacing: 1px; }
+
+  .policy-body {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 4rem 3rem 6rem;
+  }
+
+  .policy-section { margin-bottom: 3rem; }
+  .policy-section h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.6rem;
+    letter-spacing: 2px;
+    color: var(--white);
+    margin-bottom: 1rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .policy-section p {
+    color: #aaa;
+    font-size: 0.95rem;
+    line-height: 1.8;
+    font-weight: 300;
+    margin-bottom: 0.8rem;
+  }
+  .policy-section strong { color: var(--white); font-weight: 600; }
+  .policy-section a { color: var(--orange); text-decoration: none; }
+  .policy-section a:hover { text-decoration: underline; }
+  .policy-section ul {
+    list-style: none;
+    margin: 0.5rem 0 0.8rem;
+  }
+  .policy-section ul li {
+    color: #aaa;
+    font-size: 0.95rem;
+    line-height: 1.8;
+    font-weight: 300;
+    padding: 0.3rem 0;
+    padding-left: 1.4rem;
+    position: relative;
+  }
+  .policy-section ul li::before {
+    content: '▸';
+    color: var(--orange);
+    font-size: 0.65rem;
+    position: absolute;
+    left: 0;
+    top: 0.55rem;
+  }
+
+  .policy-contact {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--orange);
+    padding: 1.5rem 2rem;
+    margin-top: 1rem;
+  }
+  .policy-contact p {
+    margin-bottom: 0.3rem;
+  }
+  .policy-contact a {
+    color: var(--orange);
+    text-decoration: none;
+  }
+  .policy-contact a:hover {
+    text-decoration: underline;
+  }
+
+  footer { background: var(--black); border-top: 1px solid var(--border); padding: 3rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+  .footer-logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.5rem; letter-spacing: 4px; }
+  .footer-logo span { color: var(--orange); }
+  footer p { color: var(--dim); font-size: 0.8rem; }
+  .footer-links { display: flex; gap: 1.5rem; align-items: center; }
+  .footer-links a { color: var(--dim); font-size: 0.8rem; text-decoration: none; transition: color 0.2s; }
+  .footer-links a:hover { color: var(--white); }
+
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    nav ul { display: none; }
+    .policy-hero { padding: 7rem 1.5rem 3rem; }
+    .policy-body { padding: 3rem 1.5rem 5rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="logo">CALIBR<span>.</span></a>
+  <ul>
+    <li><a href="/#how-it-works">How It Works</a></li>
+    <li><a href="/#pricing">Pricing</a></li>
+    <li><a href="mailto:wes@calibrmedia.com?subject=Discovery%20Call%20Request" class="nav-cta">Book a Call</a></li>
+  </ul>
+</nav>
+
+<div class="policy-hero">
+  <div style="max-width: 780px; margin: 0 auto;">
+    <div class="section-label">// Legal</div>
+    <h1>TERMS OF<br>SERVICE.</h1>
+    <p class="last-updated">Last Updated: August 4, 2026</p>
+  </div>
+</div>
+
+<div class="policy-body">
+
+  <div class="policy-section">
+    <p>These Terms of Service ("Terms") govern use of the Calibr Media website, advertising management platform, and client portal (collectively, the "Services") provided by Calibr Media LLC ("Calibr Media," "we," "us"). By using the Services or signing a service agreement with us, you ("Client," "you") agree to these Terms.</p>
+  </div>
+
+  <div class="policy-section">
+    <h2>1. Services</h2>
+    <p>Calibr Media provides advertising management services, including campaign creation and management on Meta platforms (Facebook and Instagram), inventory synchronization, performance reporting, and lead delivery through a client portal.</p>
+    <p>The specific scope, pricing, and term of your engagement are set out in your individual service agreement, which controls if it conflicts with these Terms.</p>
+  </div>
+
+  <div class="policy-section">
+    <h2>2. Client Responsibilities</h2>
+    <p>You agree to:</p>
+    <ul>
+      <li>Provide accurate business information</li>
+      <li>Grant and maintain the access we need to your Facebook Page, ad account, and inventory feed</li>
+      <li>Maintain your own Meta advertising account in good standing and fund it as agreed</li>
+      <li>Accept Meta's Lead Ad Terms of Service on your Page where lead forms are used</li>
+      <li>Review and approve campaigns before launch where approval is requested</li>
+      <li>Ensure any content, imagery, pricing, or claims you supply are accurate, lawful, and yours to use</li>
+      <li>Respond to consumer leads in compliance with applicable law, including TCPA and CAN-SPAM</li>
+    </ul>
+    <p>You remain the owner and controller of your ad account, your Facebook Page, and any lead data generated by your campaigns.</p>
+  </div>
+
+  <div class="policy-section">
+    <h2>3. Advertising Spend</h2>
+    <p>Advertising spend is separate from Calibr Media's fees and is billed directly to you by Meta. We do not mark up media spend. You are responsible for maintaining sufficient funding; campaigns will stop delivering if your Meta account balance or payment method fails.</p>
+  </div>
+
+  <div class="policy-section">
+    <h2>4. Fees and Payment</h2>
+    <p>Fees are as stated in your service agreement, billed monthly in advance. Late payment may result in suspension of Services. Fees are non-refundable except as expressly stated in your service agreement or Section 5.</p>
+  </div>
+
+  <div class="policy-section">
+    <h2>5. Delivery Guarantee</h2>
+    <p>Where your service agreement includes a delivery guarantee, it is a guarantee of <strong>delivery, not results.</strong> We guarantee that within 30 days of onboarding we will have campaigns live, inventory synced where applicable, and your dashboard active. If we fail to deliver those items, your first month's fee is refunded.</p>
+    <p><strong>We do not guarantee any specific number of leads, cost per lead, sales, or return on ad spend.</strong> Advertising performance depends on factors outside our control, including your market, inventory, pricing, sales process, and Meta's auction dynamics.</p>
+  </div>
+
+  <div class="policy-section">
+    <h2>6. Platform Dependence</h2>
+    <p>The Services depend on Meta's platforms and APIs. Meta may change, restrict, or terminate access to its APIs, reject or disapprove advertisements, or suspend accounts at its sole discretion. Calibr Media is not liable for interruptions, disapprovals, or account actions taken by Meta. We will make reasonable efforts to resolve such issues.</p>
+  </div>
+
+  <div class="policy-section">
+    <h2>7. Intellectual Property</h2>
+    <p>Calibr Media retains all rights to its platform, software, systems, processes, and methodologies. Nothing in these Terms transfers ownership of our technology to you.</p>
+    <p>You retain all rights to your trademarks, inventory data, imagery, and brand assets. You grant us a limited license to use them solely to create and run advertising on your behalf during the engagement.</p>
+    <p>Ad creative we produce for your campaigns is licensed to you for use in connection with those campaigns.</p>
+  </div>
+
+  <div class="policy-section">
+    <h2>8. Confidentiality</h2>
+    <p>Each party will protect the other's non-public business information and use it only to perform under these Terms.</p>
+  </div>
+
+  <div class="policy-section">
+    <h2>9. Term and Termination</h2>
+    <p>Either party may terminate with <strong>30 days' written notice.</strong> On termination:</p>
+    <ul>
+      <li>We stop managing campaigns at the end of the paid period</li>
+      <li>We pause or hand off active campaigns as you direct</li>
+      <li>Your ad account, Page, and lead data remain yours</li>
+      <li>We delete or return your lead data on request per our Privacy Policy</li>
+      <li>Fees for the current period are not prorated unless stated in your service agreement</li>
+    </ul>
+    <p>We may suspend or terminate immediately for non-payment, or for use of the Services in a manner that is unlawful or violates Meta's policies.</p>
+  </div>
+
+  <div class="policy-section">
+    <h2>10. Disclaimer of Warranties</h2>
+    <p>The Services are provided "as is" and "as available." To the fullest extent permitted by law, we disclaim all warranties, express or implied, including merchantability, fitness for a particular purpose, and non-infringement.</p>
+  </div>
+
+  <div class="policy-section">
+    <h2>11. Limitation of Liability</h2>
+    <p>To the fullest extent permitted by law, Calibr Media's total liability arising out of or relating to the Services will not exceed <strong>the fees you paid us in the three (3) months preceding the claim.</strong> We are not liable for indirect, incidental, consequential, special, or punitive damages, including lost profits or lost business opportunity, even if advised of the possibility.</p>
+  </div>
+
+  <div class="policy-section">
+    <h2>12. Indemnification</h2>
+    <p>You agree to indemnify and hold Calibr Media harmless from claims arising out of content, imagery, pricing, or claims you supplied; your handling of consumer lead data; or your violation of applicable law or Meta's policies.</p>
+  </div>
+
+  <div class="policy-section">
+    <h2>13. Governing Law</h2>
+    <p>These Terms are governed by the laws of the State of Michigan, without regard to conflict of law principles. Any dispute will be brought in the state or federal courts located in Kent County, Michigan.</p>
+  </div>
+
+  <div class="policy-section">
+    <h2>14. Changes</h2>
+    <p>We may update these Terms. Material changes will be posted here with an updated revision date and, for active clients, communicated by email at least 30 days before taking effect.</p>
+  </div>
+
+  <div class="policy-section">
+    <h2>15. Contact</h2>
+    <div class="policy-contact">
+      <p>Calibr Media LLC</p>
+      <p>1301 Pagosa Drive</p>
+      <p>Ada, Michigan 49301</p>
+      <p>Email: <a href="mailto:wesconk@calibrmedia.com">wesconk@calibrmedia.com</a></p>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-logo">CALIBR<span>.</span></div>
+  <p>© 2026 Calibr Media LLC. Autonomous advertising for independent dealerships.</p>
+  <div class="footer-links">
+    <a href="/privacy">Privacy Policy</a>
+    <a href="/terms">Terms of Service</a>
+    <a href="/data-deletion">Data Deletion</a>
+  </div>
+</footer>
+
+</body>
+</html>
